@@ -317,6 +317,7 @@ classdef VisProtGui_Linux < handle
                     obj.ParprocessClass = parext(obj.ParprocessClass, obj, handles);  
                 %end
                 addpath(genpath('output/Particle_extraction/'));
+                set(handles.('tExtract'),'String',['Box size: ',num2str(obj.ParprocessClass.BoxSize),' A (',num2str(obj.ParprocessClass.BoxSizepx),' px)']);
                 set(handles.('sProg2'),'String','Particles extracted!');
                 drawnow;   
                 imds_par = imageDatastore(particleFolder,'FileExtensions','.mrc','ReadFcn',@vp.fg.ReadMRC);
