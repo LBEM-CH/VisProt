@@ -62,7 +62,7 @@ classdef ParProcess_acc
                 vp.fg.particle_picking_gautomatch(obj_VisProt.module, obj_VisProt.min, obj_VisProt.max, obj_VisProt.kv, obj_VisProt.cs, obj_VisProt.px, obj_VisProt.RawFolder, datasetID);
                 
             end
-            obj.BoxSize = round((obj_VisProt.max+obj_VisProt.max)/2) + 200;
+            obj.BoxSize = round((obj_VisProt.max+obj_VisProt.max)/2) + 100;
             obj.BoxSizepx = round(obj.BoxSize/obj_VisProt.px);
             if mod(obj.BoxSizepx,2) == 0
                 obj.BoxSizepx = obj.BoxSizepx + 1;
@@ -72,6 +72,13 @@ classdef ParProcess_acc
         function obj = parext(obj, obj_VisProt, handlesVPG)
             warning ('off','all');
             mkdir('output/Particle_extraction/all_particles/');
+            
+            obj.BoxSize = round((obj_VisProt.max+obj_VisProt.max)/2) + 100;
+            obj.BoxSizepx = round(obj.BoxSize/obj_VisProt.px);
+            if mod(obj.BoxSizepx,2) == 0
+                obj.BoxSizepx = obj.BoxSizepx + 1;
+            end
+            
             for datasetID = 1:obj_VisProt.NumberDatasets
                 
                 progress = ['Extracting the particles.....',num2str(round((datasetID/obj_VisProt.NumberDatasets)*100)),'%   (dataset ',num2str(datasetID),' of ',num2str(obj_VisProt.NumberDatasets),')'];
