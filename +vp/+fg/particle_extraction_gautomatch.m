@@ -3,7 +3,6 @@ function [numberOfBlobs_inBorder, coordsRelionFin] = particle_extraction_gautoma
 
 
 boxSize = ob.BoxSizepx;
-boxSize = 401;
 MicrogEdge = ob.SizeIm;
 MinMicrogEdge = 1;
 MaxMicrogEdgei = MicrogEdge(1);
