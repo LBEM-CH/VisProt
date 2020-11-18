@@ -1,7 +1,7 @@
 # VisProt for differential visual proteomics by electron microscopy
 
 ### About:
-VisProt is a MATLAB-based package designed for electron microscopy image-prosessing and differential visual proteomics.
+VisProt is a MATLAB-based package designed for electron microscopy image-processing and differential visual proteomics.
 
 ### Instructions:
 1. Create a project directory and add the <i>vp</i> package. 
